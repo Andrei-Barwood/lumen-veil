@@ -1,0 +1,193 @@
+{
+  "name": "Sorox Canon of the Luminous Threshold",
+  "doctrine": "Strict corridor sanctity, early denial of ambiguity, rapid reversible containment.",
+  "ambiguity_tolerance": 0.18,
+  "release_bias": 0.12,
+  "rules": [
+    {
+      "name": "sorox-measure-granted",
+      "priority": 10,
+      "match": {
+        "classification_in": ["ally", "authorized", "known"],
+        "current_state": "observed"
+      },
+      "action": "observe",
+      "target_state": "measured",
+      "reason_code": "sorox.measure.granted"
+    },
+    {
+      "name": "sorox-know-granted",
+      "priority": 20,
+      "match": {
+        "classification_in": ["ally", "authorized", "known"],
+        "current_state": "measured"
+      },
+      "action": "observe",
+      "target_state": "known",
+      "reason_code": "sorox.known.granted"
+    },
+    {
+      "name": "sorox-bless-granted",
+      "priority": 30,
+      "match": {
+        "classification_in": ["ally", "authorized"],
+        "current_state": "known",
+        "anomaly_score_lte": 0.24
+      },
+      "action": "bless",
+      "target_state": "blessed",
+      "reason_code": "sorox.grace.bestowed",
+      "effects": {
+        "restore": 0.04
+      },
+      "emit": ["TransitPurified"]
+    },
+    {
+      "name": "sorox-release-blessed",
+      "priority": 40,
+      "match": {
+        "classification_in": ["ally", "authorized"],
+        "current_state": "blessed"
+      },
+      "action": "release",
+      "target_state": "released",
+      "reason_code": "sorox.release.pure",
+      "effects": {
+        "restore": 0.08
+      }
+    },
+    {
+      "name": "sorox-shadow-known-anomaly",
+      "priority": 50,
+      "match": {
+        "classification_in": ["known", "authorized"],
+        "current_state_in": ["observed", "measured", "known"],
+        "anomaly_score_gte": 0.25,
+        "anomaly_score_lte": 0.49
+      },
+      "action": "shadow",
+      "target_state": "shadowed",
+      "reason_code": "sorox.shadow.anomaly",
+      "effects": {
+        "sensors": 0.04,
+        "comms": 0.03,
+        "velocity_damping": 0.92
+      },
+      "emit": ["AegisShifted"]
+    },
+    {
+      "name": "sorox-measure-unknown",
+      "priority": 60,
+      "match": {
+        "classification": "unknown",
+        "current_state": "observed"
+      },
+      "action": "observe",
+      "target_state": "measured",
+      "reason_code": "sorox.measure.unknown"
+    },
+    {
+      "name": "sorox-deny-unknown",
+      "priority": 70,
+      "match": {
+        "classification": "unknown",
+        "current_state": "measured"
+      },
+      "action": "warn",
+      "target_state": "denied",
+      "reason_code": "sorox.grace.denied",
+      "effects": {
+        "comms": 0.04,
+        "navigation": 0.02,
+        "velocity_damping": 0.88
+      },
+      "emit": ["GraceDenied"]
+    },
+    {
+      "name": "sorox-shadow-suspicious",
+      "priority": 80,
+      "match": {
+        "classification": "suspicious",
+        "current_state_in": ["observed", "measured", "known"]
+      },
+      "action": "shadow",
+      "target_state": "shadowed",
+      "reason_code": "sorox.shadow.suspicious",
+      "effects": {
+        "sensors": 0.06,
+        "comms": 0.05,
+        "velocity_damping": 0.8
+      },
+      "emit": ["AegisShifted"]
+    },
+    {
+      "name": "sorox-degrade-shadowed",
+      "priority": 90,
+      "match": {
+        "classification": "suspicious",
+        "current_state": "shadowed"
+      },
+      "action": "degrade",
+      "target_state": "degraded",
+      "reason_code": "sorox.silence.shadowed",
+      "effects": {
+        "sensors": 0.12,
+        "comms": 0.12,
+        "navigation": 0.09,
+        "hardpoint_sync": 0.18,
+        "velocity_damping": 0.72
+      },
+      "emit": ["SilenceInvoked"]
+    },
+    {
+      "name": "sorox-contain-intruder",
+      "priority": 100,
+      "match": {
+        "classification_in": ["intruder", "hostile"],
+        "current_state_in": ["observed", "measured", "known", "shadowed", "degraded", "denied"]
+      },
+      "action": "contain",
+      "target_state": "contained",
+      "reason_code": "sorox.containment.raised",
+      "effects": {
+        "sensors": 0.18,
+        "comms": 0.2,
+        "navigation": 0.2,
+        "control_link": 0.24,
+        "hardpoint_sync": 0.35,
+        "velocity_damping": 0.45
+      },
+      "emit": ["ContainmentRaised", "SilenceInvoked"]
+    },
+    {
+      "name": "sorox-exile-fractured",
+      "priority": 110,
+      "match": {
+        "subsystem_health_lte": 0.32,
+        "current_state_in": ["contained", "degraded"]
+      },
+      "action": "exile",
+      "target_state": "exiled",
+      "reason_code": "sorox.exile.fractured",
+      "effects": {
+        "velocity_damping": 0.35
+      },
+      "emit": ["GraceDenied"]
+    },
+    {
+      "name": "sorox-release-restored",
+      "priority": 120,
+      "match": {
+        "classification_in": ["known", "authorized", "ally"],
+        "current_state_in": ["shadowed", "degraded", "contained"],
+        "anomaly_score_lte": 0.18
+      },
+      "action": "release",
+      "target_state": "released",
+      "reason_code": "sorox.release.restored",
+      "effects": {
+        "restore": 0.12
+      }
+    }
+  ]
+}

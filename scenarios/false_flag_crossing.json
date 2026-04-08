@@ -1,0 +1,76 @@
+{
+  "name": "false_flag_crossing",
+  "description": "A vessel bears a borrowed seal beneath Sorox ceremonial watch, testing the patience of the arc.",
+  "jurisdiction": "sorox",
+  "notes": [
+    "The transponder is present, but its grace is too thin to pass the sanctum unchallenged."
+  ],
+  "witness_arrays": [
+    {
+      "name": "flag-choir",
+      "position": { "x": 40.0, "y": -8.0 },
+      "reach": 120.0,
+      "fidelity": 0.94,
+      "noise_floor": 0.04
+    }
+  ],
+  "ward_nodes": [
+    {
+      "name": "stillness-flag",
+      "kind": "stillness",
+      "position": { "x": 20.0, "y": -4.0 },
+      "reach": 46.0,
+      "intensity": 0.5,
+      "falloff": 0.9,
+      "jurisdiction": "sorox"
+    }
+  ],
+  "corridors": [
+    {
+      "name": "judicator-arc",
+      "jurisdiction": "sorox",
+      "start": { "x": 92.0, "y": -8.0 },
+      "end": { "x": -40.0, "y": -8.0 },
+      "width": 8.0,
+      "sacred": true
+    }
+  ],
+  "sanctuaries": [
+    {
+      "name": "arc-sanctum",
+      "jurisdiction": "sorox",
+      "center": { "x": 2.0, "y": -8.0 },
+      "radius": 16.0
+    }
+  ],
+  "thresholds": [
+    {
+      "name": "flag-threshold",
+      "jurisdiction": "sorox",
+      "anchor": { "x": 8.0, "y": -8.0 },
+      "radius": 18.0
+    }
+  ],
+  "vessels": [
+    {
+      "ident": "FF-021",
+      "callsign": "Borrowed Halo",
+      "allegiance": "unknown",
+      "route": "judicator-arc",
+      "mass": 0.8,
+      "thermal_signature": 0.68,
+      "engine_signature": 0.73,
+      "susceptibility": 0.76,
+      "shielding": 0.2,
+      "position": { "x": 58.0, "y": -7.0 },
+      "velocity": { "x": -8.8, "y": -0.3 },
+      "acceleration": { "x": 0.0, "y": 0.0 },
+      "seal": {
+        "code": "SRX-FALSE-021",
+        "covenant": "borrowed-light",
+        "trust": 0.31,
+        "corridor": "judicator-arc"
+      }
+    }
+  ]
+}

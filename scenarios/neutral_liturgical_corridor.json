@@ -1,0 +1,75 @@
+{
+  "name": "neutral_liturgical_corridor",
+  "description": "A neutral rite-lane remains open only while timing, bearing, and corridor geometry remain in concord.",
+  "jurisdiction": "sorox",
+  "notes": [
+    "The lane is neutral in commerce, though never ordinary in form or access."
+  ],
+  "witness_arrays": [
+    {
+      "name": "neutral-choir",
+      "position": { "x": 26.0, "y": 24.0 },
+      "reach": 120.0,
+      "fidelity": 0.88,
+      "noise_floor": 0.06
+    }
+  ],
+  "ward_nodes": [
+    {
+      "name": "neutral-mercy",
+      "kind": "mercy",
+      "position": { "x": 12.0, "y": 20.0 },
+      "reach": 36.0,
+      "intensity": 0.22,
+      "falloff": 1.1,
+      "jurisdiction": "sorox"
+    }
+  ],
+  "corridors": [
+    {
+      "name": "neutral-rite",
+      "jurisdiction": "sorox",
+      "start": { "x": 90.0, "y": 20.0 },
+      "end": { "x": -10.0, "y": 20.0 },
+      "width": 9.0,
+      "sacred": true
+    }
+  ],
+  "sanctuaries": [],
+  "thresholds": [
+    {
+      "name": "neutral-threshold",
+      "jurisdiction": "sorox",
+      "anchor": { "x": 0.0, "y": 20.0 },
+      "radius": 14.0
+    }
+  ],
+  "vessels": [
+    {
+      "ident": "NT-900",
+      "callsign": "Measured Salt",
+      "allegiance": "neutral",
+      "route": "neutral-rite",
+      "mass": 0.95,
+      "thermal_signature": 0.5,
+      "engine_signature": 0.46,
+      "susceptibility": 0.52,
+      "shielding": 0.38,
+      "position": { "x": 52.0, "y": 20.0 },
+      "velocity": { "x": -4.2, "y": 0.0 },
+      "acceleration": { "x": 0.0, "y": 0.0 },
+      "seal": {
+        "code": "NT-NEUTRAL-900",
+        "covenant": "truce-ledger",
+        "trust": 0.72,
+        "corridor": "neutral-rite"
+      },
+      "permit": {
+        "corridor": "neutral-rite",
+        "jurisdiction": "sorox",
+        "tier": "neutral",
+        "sacred_clearance": true
+      }
+    }
+  ]
+}

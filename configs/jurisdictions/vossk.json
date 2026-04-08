@@ -1,0 +1,177 @@
+{
+  "name": "Vossk Canon of Adaptive Vigil",
+  "doctrine": "Behavior-led judgment, pragmatic tolerance, escalation by pattern rather than ceremony alone.",
+  "ambiguity_tolerance": 0.42,
+  "release_bias": 0.28,
+  "rules": [
+    {
+      "name": "vossk-measure-granted",
+      "priority": 10,
+      "match": {
+        "classification_in": ["ally", "authorized", "known"],
+        "current_state": "observed"
+      },
+      "action": "observe",
+      "target_state": "measured",
+      "reason_code": "vossk.measure.granted"
+    },
+    {
+      "name": "vossk-know-granted",
+      "priority": 20,
+      "match": {
+        "classification_in": ["ally", "authorized", "known"],
+        "current_state": "measured"
+      },
+      "action": "observe",
+      "target_state": "known",
+      "reason_code": "vossk.known.granted"
+    },
+    {
+      "name": "vossk-bless-granted",
+      "priority": 30,
+      "match": {
+        "classification_in": ["ally", "authorized"],
+        "current_state": "known",
+        "anomaly_score_lte": 0.3
+      },
+      "action": "bless",
+      "target_state": "blessed",
+      "reason_code": "vossk.grace.bestowed",
+      "effects": {
+        "restore": 0.05
+      },
+      "emit": ["TransitPurified"]
+    },
+    {
+      "name": "vossk-release-blessed",
+      "priority": 40,
+      "match": {
+        "classification_in": ["ally", "authorized"],
+        "current_state": "blessed"
+      },
+      "action": "release",
+      "target_state": "released",
+      "reason_code": "vossk.release.clear",
+      "effects": {
+        "restore": 0.1
+      }
+    },
+    {
+      "name": "vossk-observe-unknown",
+      "priority": 50,
+      "match": {
+        "classification": "unknown",
+        "current_state": "observed",
+        "anomaly_score_lte": 0.48
+      },
+      "action": "observe",
+      "target_state": "measured",
+      "reason_code": "vossk.observe.unknown"
+    },
+    {
+      "name": "vossk-shadow-unknown",
+      "priority": 60,
+      "match": {
+        "classification": "unknown",
+        "current_state": "measured",
+        "anomaly_score_lte": 0.58
+      },
+      "action": "shadow",
+      "target_state": "shadowed",
+      "reason_code": "vossk.shadow.unknown",
+      "effects": {
+        "sensors": 0.03,
+        "comms": 0.02,
+        "velocity_damping": 0.93
+      },
+      "emit": ["AegisShifted"]
+    },
+    {
+      "name": "vossk-shadow-suspicious",
+      "priority": 70,
+      "match": {
+        "classification": "suspicious",
+        "current_state_in": ["observed", "measured", "known"]
+      },
+      "action": "shadow",
+      "target_state": "shadowed",
+      "reason_code": "vossk.shadow.suspicious",
+      "effects": {
+        "sensors": 0.05,
+        "comms": 0.04,
+        "velocity_damping": 0.86
+      },
+      "emit": ["AegisShifted"]
+    },
+    {
+      "name": "vossk-degrade-shadowed",
+      "priority": 80,
+      "match": {
+        "classification": "suspicious",
+        "current_state": "shadowed",
+        "exposure_lte": 0.7
+      },
+      "action": "degrade",
+      "target_state": "degraded",
+      "reason_code": "vossk.silence.shadowed",
+      "effects": {
+        "sensors": 0.1,
+        "comms": 0.1,
+        "navigation": 0.06,
+        "hardpoint_sync": 0.12,
+        "velocity_damping": 0.76
+      },
+      "emit": ["SilenceInvoked"]
+    },
+    {
+      "name": "vossk-contain-intruder",
+      "priority": 90,
+      "match": {
+        "classification_in": ["intruder", "hostile"],
+        "current_state_in": ["observed", "measured", "known", "shadowed", "degraded", "denied"]
+      },
+      "action": "contain",
+      "target_state": "contained",
+      "reason_code": "vossk.containment.raised",
+      "effects": {
+        "sensors": 0.12,
+        "comms": 0.14,
+        "navigation": 0.16,
+        "control_link": 0.16,
+        "hardpoint_sync": 0.25,
+        "velocity_damping": 0.55
+      },
+      "emit": ["ContainmentRaised"]
+    },
+    {
+      "name": "vossk-release-restored",
+      "priority": 100,
+      "match": {
+        "classification_in": ["ally", "authorized", "known"],
+        "current_state_in": ["shadowed", "degraded", "contained"],
+        "anomaly_score_lte": 0.22
+      },
+      "action": "release",
+      "target_state": "released",
+      "reason_code": "vossk.release.restored",
+      "effects": {
+        "restore": 0.14
+      }
+    },
+    {
+      "name": "vossk-exile-fractured",
+      "priority": 110,
+      "match": {
+        "subsystem_health_lte": 0.18,
+        "current_state": "contained"
+      },
+      "action": "exile",
+      "target_state": "exiled",
+      "reason_code": "vossk.exile.fractured",
+      "effects": {
+        "velocity_damping": 0.42
+      },
+      "emit": ["GraceDenied"]
+    }
+  ]
+}
