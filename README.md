@@ -5,52 +5,52 @@
      ward lattice / canon engine / threshold custody
 ```
 
-Lumen Veil is an interplanetary perimeter doctrine archive for Sorox and Vossk. It brings together sensing, identity, authorization, canon selection, field orchestration, replay, and audit within a single modular monorepo. The result is meant to feel less like a generic simulator and more like a living instrument of custody: austere in naming, exact in judgment, and luminous in structure.
+Lumen Veil es un archivo doctrinal de custodia perimetral interplanetaria para Sorox y Vossk. Reúne sensado, identidad, autorización, selección de canon, orquestación de campo, replay y auditoría dentro de un único monorepo modular. El resultado busca sentirse menos como un simulador genérico y más como un instrumento vivo de custodia: austero en naming, exacto en juicio y luminoso en estructura.
 
-At its center lies a simple idea. A threshold is not merely watched. It is witnessed, measured, judged, and held to order. Every vessel crossing a corridor enters a system that remembers geometry, bearing, seal, permit, doctrine, and consequence.
+En su centro hay una idea simple. Un umbral no sólo se vigila. Se testimonia, se mide, se juzga y se mantiene en orden. Toda nave que cruza un corredor entra en un sistema que recuerda geometría, bearing, seal, permit, doctrina y consecuencia.
 
-## Character
+## Carácter
 
-Lumen Veil is shaped by a liturgical engineering language:
+Lumen Veil está modelado por un lenguaje de ingeniería litúrgica:
 
-- custody before chaos
-- doctrine before improvisation
-- restraint before excess
-- replay before forgetting
-- state transition before vague outcome
+- custodia antes que caos
+- doctrina antes que improvisación
+- contención antes que exceso
+- replay antes que olvido
+- transición de estado antes que resultado ambiguo
 
-That character appears in both code and interface: `veil`, `canon`, `mercy`, `threshold`, `sanctuary`, `witness`, `containment`, `grace`, `shadow`, `release`.
+Ese carácter aparece tanto en el código como en la interfaz: `veil`, `canon`, `mercy`, `threshold`, `sanctuary`, `witness`, `containment`, `grace`, `shadow`, `release`.
 
 ## Canon of Restraint
 
-Lumen Veil governs detection, judgment, isolation, and reversible containment across interplanetary thresholds. Its doctrine favors continuity, corridor discipline, and explainable state transition over ruin. The system is therefore built around bounded intervention, observable escalation, and legible custody.
+Lumen Veil gobierna detección, juicio, aislamiento y contención reversible a través de umbrales interplanetarios. Su doctrina favorece continuidad, disciplina de corredor y transición de estado explicable por encima de la ruina. Por eso el sistema se construye alrededor de intervención acotada, escalamiento observable y custodia legible.
 
-## At a Glance
+## Vista General
 
-| Layer | Role | Implementation |
+| Capa | Función | Implementación |
 | --- | --- | --- |
-| Witness | Collect remote signatures and approach pattern | Python services |
-| Seal | Assess identity, permit, corridor fidelity, and anomaly | Python services |
-| Canon | Select jurisdictional response through ordered rules | Python policy engine |
-| Mercy | Apply reversible system pressure and state transition | Python services |
-| Lattice | Propagate field exposure and subsystem degradation | C engine with Python fallback |
-| Ledger | Record events, telemetry, replay, and audit | Python services |
-| Gate | Expose command and HTTP interfaces | CLI and standard-library API |
+| Witness | Recoger firmas remotas y patrón de aproximación | Servicios en Python |
+| Seal | Evaluar identidad, permit, fidelidad de corredor y anomalía | Servicios en Python |
+| Canon | Seleccionar la respuesta jurisdiccional mediante reglas ordenadas | Motor de políticas en Python |
+| Mercy | Aplicar presión reversible sobre sistemas y transición de estado | Servicios en Python |
+| Lattice | Propagar exposición de campo y degradación de subsistemas | Motor en C con fallback en Python |
+| Ledger | Registrar eventos, telemetría, replay y auditoría | Servicios en Python |
+| Gate | Exponer interfaces de comando y HTTP | CLI y API con librería estándar |
 
-## Principal Capabilities
+## Capacidades Principales
 
-- Abstract field simulation in C for motion, attenuation, exposure, and subsystem pressure.
-- Stable Python wrapper with transparent fallback when the native module is unavailable.
-- Jurisdictional canons for Sorox and Vossk, driven entirely by declarative configuration.
-- Event-driven service architecture with replayable streams and explicit contracts.
-- State-machine based vessel lifecycle from `observed` through `released`, `contained`, or `exiled`.
-- Scenario library with doctrinal conflict, corridor breach, convoy passage, storm interference, and border dispute.
-- Structured telemetry, counters, gauges, transition history, and audit entries for every run.
-- CLI and HTTP interface suitable for stepwise simulation, canon inspection, and reproducible reports.
+- Simulación abstracta de campo en C para movimiento, atenuación, exposición y presión sobre subsistemas.
+- Wrapper estable en Python con fallback transparente cuando el módulo nativo no está disponible.
+- Cánones jurisdiccionales para Sorox y Vossk, dirigidos por configuración declarativa.
+- Arquitectura de servicios basada en eventos con streams replayables y contratos explícitos.
+- Ciclo de vida de nave basado en máquina de estados, desde `observed` hasta `released`, `contained` o `exiled`.
+- Biblioteca de escenarios con conflicto doctrinal, ruptura de corredor, paso de convoy, tormenta y disputa fronteriza.
+- Telemetría estructurada, contadores, gauges, historial de transiciones y entradas de auditoría en cada ejecución.
+- CLI y API HTTP aptas para simulación paso a paso, inspección de canon y reportes reproducibles.
 
-## Recommended First Encounter
+## Primer Encuentro Recomendado
 
-Build the lattice, list the rites, then conduct one passage:
+Construye la lattice, enumera los rites y luego conduce un pasaje:
 
 ```bash
 python3 setup.py build_ext --inplace
@@ -61,19 +61,19 @@ PYTHONPATH=src python3 -m lumen_veil conduct \
   --pretty
 ```
 
-If native compilation is unavailable, the Python fallback still runs the entire archive from `PYTHONPATH=src`.
+Si la compilación nativa no está disponible, el fallback de Python sigue ejecutando todo el archivo desde `PYTHONPATH=src`.
 
-## Command Lexicon
+## Léxico de Comandos
 
-The ceremonial forms are the public face of the interface:
+Las formas ceremoniales son el rostro público de la interfaz:
 
-- `rites`: enumerate bundled passages and scenarios
-- `conduct`: run a full scenario from first witness to final verdict
-- `measure`: advance a scenario in deliberate increments
-- `canon`: inspect a jurisdictional doctrine
-- `gate`: open the HTTP interface
+- `rites`: enumerar pasajes y escenarios disponibles
+- `conduct`: ejecutar un escenario completo desde el primer witness hasta el veredicto final
+- `measure`: avanzar un escenario en incrementos deliberados
+- `canon`: inspeccionar la doctrina de una jurisdicción
+- `gate`: abrir la interfaz HTTP
 
-Backward-compatible aliases remain available:
+Los aliases compatibles con el estilo anterior siguen disponibles:
 
 - `list-scenarios`
 - `run`
@@ -81,62 +81,62 @@ Backward-compatible aliases remain available:
 - `inspect-policy`
 - `serve`
 
-## Passage Lifecycle
+## Ciclo de Custodia
 
-Every run follows the same order of custody:
+Toda ejecución sigue el mismo orden:
 
-1. Witness arrays collect thermal, engine, transponder, and approach signatures.
-2. The Seal service compares route, permit, corridor geometry, and bearing.
-3. The Canon engine selects the governing rule for the current jurisdiction.
-4. The Mercy layer applies bounded pressure to communications, navigation, sensing, control, or motion.
-5. The lattice advances exposure and subsystem state under ward-node influence.
-6. The ledger records events, telemetry, transitions, and explanation.
+1. Los witness arrays recogen firmas térmicas, de motor, de transpondedor y de aproximación.
+2. El servicio Seal compara ruta, permit, geometría de corredor y bearing.
+3. El motor Canon selecciona la regla gobernante para la jurisdicción actual.
+4. La capa Mercy aplica presión acotada sobre comunicaciones, navegación, sensado, control o movimiento.
+5. La lattice avanza exposición y estado de subsistemas bajo la influencia de los ward nodes.
+6. El ledger registra eventos, telemetría, transiciones y explicación.
 
-Typical ascent:
+Ascenso típico:
 
 ```text
 observed -> measured -> known -> blessed -> released
 ```
 
-Correction branch:
+Rama de corrección:
 
 ```text
 observed|measured|known -> shadowed -> degraded -> contained -> exiled
 ```
 
-## Sorox and Vossk
+## Sorox y Vossk
 
-Lumen Veil is not driven by one generic policy table. It carries two distinct temperaments.
+Lumen Veil no se rige por una sola tabla genérica de políticas. Contiene dos temperamentos distintos.
 
 ### Sorox
 
-Sorox treats corridor geometry as a sacred matter of order. It closes ambiguity quickly, grants grace ceremonially, and moves to containment without hesitation when sanctity is crossed.
+Sorox trata la geometría del corredor como un asunto sagrado de orden. Cierra la ambigüedad con rapidez, concede grace de forma ceremonial y se mueve hacia containment sin vacilar cuando la santidad es cruzada.
 
-Sorox tends to:
+Sorox tiende a:
 
-- measure early
-- deny weak identity quickly
-- bless only clean passage
-- contain sanctuary breach without delay
+- medir temprano
+- negar con rapidez identidades débiles
+- bendecir sólo el tránsito limpio
+- contener la ruptura de sanctuaries sin demora
 
-See [`configs/jurisdictions/sorox.json`](/Volumes/macOS%20-%20Beck/SnoGuard/configs/jurisdictions/sorox.json).
+Ver [configs/jurisdictions/sorox.json](configs/jurisdictions/sorox.json).
 
 ### Vossk
 
-Vossk is adaptive, pattern-led, and more willing to study conduct before it seals a verdict. Bearing, drift, persistence, and corridor fidelity matter as much as formal title.
+Vossk es adaptable, guiado por patrón y más dispuesto a estudiar la conducta antes de sellar un veredicto. Bearing, drift, persistencia y fidelidad al corredor importan tanto como el título formal.
 
-Vossk tends to:
+Vossk tiende a:
 
-- tolerate partial accord longer
-- shadow before it closes
-- degrade persistent disorder
-- reserve hard closure for stubborn or escalating intrusion
+- tolerar durante más tiempo los acuerdos parciales
+- proyectar shadow antes de cerrar
+- degradar el desorden persistente
+- reservar el cierre duro para intrusiones obstinadas o crecientes
 
-See [`configs/jurisdictions/vossk.json`](/Volumes/macOS%20-%20Beck/SnoGuard/configs/jurisdictions/vossk.json).
+Ver [configs/jurisdictions/vossk.json](configs/jurisdictions/vossk.json).
 
-## Architecture
+## Arquitectura
 
-Lumen Veil moves in a simple order: witness, seal, canon, mercy, ledger.
+Lumen Veil se mueve en un orden simple: witness, seal, canon, mercy, ledger.
 
 ```mermaid
 flowchart LR
@@ -150,18 +150,18 @@ flowchart LR
   C --> G["CLI / HTTP Gate"]
 ```
 
-Runtime responsibilities:
+Responsabilidades en runtime:
 
-- `physics/`: the lattice of motion, attenuation, exposure, and subsystem pressure.
-- `src/lumen_veil/domain.py`: shared language for vessels, thresholds, sanctuaries, wards, and state.
-- `src/lumen_veil/policy.py`: the canon by which doctrine becomes verdict.
-- `src/lumen_veil/services/`: the ministries of witness, seal, judgment, containment, telemetry, replay, and training.
-- `configs/jurisdictions/`: living doctrine for Sorox and Vossk.
-- `scenarios/`: staged passages where doctrine is tested under strain.
+- `physics/`: la lattice de movimiento, atenuación, exposición y presión sobre subsistemas.
+- `src/lumen_veil/domain.py`: el lenguaje compartido para naves, thresholds, sanctuaries, wards y estados.
+- `src/lumen_veil/policy.py`: el canon por el cual la doctrina se convierte en veredicto.
+- `src/lumen_veil/services/`: los ministerios de witness, seal, juicio, containment, telemetría, replay y training.
+- `configs/jurisdictions/`: la doctrina viva de Sorox y Vossk.
+- `scenarios/`: pasajes escenificados donde la doctrina es probada bajo tensión.
 
-## Domain Vocabulary
+## Vocabulario de Dominio
 
-Key entities include:
+Las entidades principales incluyen:
 
 - `Vessel`
 - `TransitSeal`
@@ -175,50 +175,50 @@ Key entities include:
 - `CanonRule`
 - `CanonDecision`
 
-Each exists to make the archive legible under replay. The code never hides state in vague side effects when it can be carried as explicit domain language instead.
+Cada una existe para que el archivo siga siendo legible bajo replay. El código no oculta estado en efectos secundarios vagos cuando puede llevarlo como lenguaje de dominio explícito.
 
-## Native Physics Layer
+## Capa Física Nativa
 
-The C engine advances vessel position, velocity, exposure, and subsystem degradation under ward-node influence. Python wraps the native module behind a stable `PhysicsEngine` interface so the rest of the archive never depends directly on CPython internals.
+El motor en C avanza posición, velocidad, exposición y degradación de subsistemas bajo la influencia de los ward nodes. Python envuelve el módulo nativo detrás de una interfaz estable de `PhysicsEngine`, de modo que el resto del archivo nunca dependa directamente de internals de CPython.
 
-The native layer models:
+La capa nativa modela:
 
-- 2D motion
-- cumulative exposure
-- attenuated field pressure
-- susceptibility and shielding
-- bounded subsystem degradation
+- movimiento 2D
+- exposición acumulada
+- presión de campo atenuada
+- susceptibility y shielding
+- degradación acotada de subsistemas
 
-It is paired with a mathematically equivalent Python fallback used whenever native compilation is absent.
+Está acompañada por un fallback de Python matemáticamente equivalente que se usa cuando la compilación nativa no está disponible.
 
-See:
+Ver:
 
-- [`docs/physics.md`](/Volumes/macOS%20-%20Beck/SnoGuard/docs/physics.md)
-- [`physics/src/lumen_native.c`](/Volumes/macOS%20-%20Beck/SnoGuard/physics/src/lumen_native.c)
-- [`src/lumen_veil/physics.py`](/Volumes/macOS%20-%20Beck/SnoGuard/src/lumen_veil/physics.py)
+- [docs/physics.md](docs/physics.md)
+- [physics/src/lumen_native.c](physics/src/lumen_native.c)
+- [src/lumen_veil/physics.py](src/lumen_veil/physics.py)
 
-## Scenario Library
+## Biblioteca de Escenarios
 
-Each scenario is a rite of judgment with its own doctrinal texture:
+Cada escenario es un rito de juicio con su propia textura doctrinal:
 
-- `sorox_unsealed_arrival`: an unsealed hull enters the gold path and meets immediate Sorox measure.
-- `vossk_minor_intrusion`: a drifting contact tests Vossk's patience for partial accord.
-- `authorized_convoy_anomaly`: a blessed convoy proceeds while one escort falls into shadow.
-- `low_mass_swarm`: scattered low-mass contacts force Vossk to answer in pattern rather than haste.
-- `false_flag_crossing`: a borrowed halo crosses ceremonial watch under a weak seal.
-- `storm_degraded_sensor`: sparse witness in a storm tests Vossk restraint.
-- `sorox_vossk_sovereignty_conflict`: foreign grace enters a border that reserves its own judgment.
-- `neutral_liturgical_corridor`: a neutral rite-lane stays open only while geometry and bearing remain in concord.
+- `sorox_unsealed_arrival`: un casco sin seal entra en el gold path y recibe measure inmediato de Sorox.
+- `vossk_minor_intrusion`: un contacto a la deriva pone a prueba la paciencia de Vossk ante un accord parcial.
+- `authorized_convoy_anomaly`: un convoy bendecido continúa mientras una escolta cae en shadow.
+- `low_mass_swarm`: contactos dispersos de baja masa obligan a Vossk a responder por patrón antes que por prisa.
+- `false_flag_crossing`: un halo prestado cruza vigilancia ceremonial bajo un seal débil.
+- `storm_degraded_sensor`: witness escaso en tormenta pone a prueba la contención de Vossk.
+- `sorox_vossk_sovereignty_conflict`: grace extranjero entra en una frontera que reserva su propio juicio.
+- `neutral_liturgical_corridor`: un rite-lane neutral permanece abierto sólo mientras geometría y bearing se mantengan en concordia.
 
-To list them directly:
+Para listarlos directamente:
 
 ```bash
 PYTHONPATH=src python3 -m lumen_veil rites --pretty
 ```
 
-## Example Conduct
+## Ejemplo de Conducta
 
-Run a Vossk passage:
+Ejecuta un pasaje de Vossk:
 
 ```bash
 PYTHONPATH=src python3 -m lumen_veil conduct \
@@ -227,18 +227,18 @@ PYTHONPATH=src python3 -m lumen_veil conduct \
   --pretty
 ```
 
-The report includes:
+El reporte incluye:
 
 - `canon_name`
 - `rite_summary`
-- tick-by-tick decisions
-- audit entries
-- event stream
-- metrics snapshot
-- replay summary
-- final states
+- decisiones tick por tick
+- entradas de auditoría
+- stream de eventos
+- snapshot de métricas
+- resumen de replay
+- estados finales
 
-Run a stepwise measure:
+Ejecuta una medición paso a paso:
 
 ```bash
 PYTHONPATH=src python3 -m lumen_veil measure \
@@ -247,7 +247,7 @@ PYTHONPATH=src python3 -m lumen_veil measure \
   --pretty
 ```
 
-Inspect a canon:
+Inspecciona un canon:
 
 ```bash
 PYTHONPATH=src python3 -m lumen_veil canon \
@@ -255,52 +255,52 @@ PYTHONPATH=src python3 -m lumen_veil canon \
   --pretty
 ```
 
-Open the HTTP gate:
+Abre la gate HTTP:
 
 ```bash
 PYTHONPATH=src python3 -m lumen_veil gate --host 127.0.0.1 --port 8787
 ```
 
-## Repository Layout
+## Estructura del Repositorio
 
 ```text
-configs/        Jurisdiction canons for Sorox and Vossk
-docs/           Architecture, API, events, glossary, development guides
-examples/       Reproducible command examples
-physics/        Native C field propagation engine
-scenarios/      Narrative scenario fixtures
-scripts/        Local development helpers
-src/            Python package and services
-tests/          Unit, integration, scenario, replay, and property-style tests
+configs/        Cánones jurisdiccionales para Sorox y Vossk
+docs/           Arquitectura, API, eventos, glosario y guías de desarrollo
+examples/       Ejemplos reproducibles de uso
+physics/        Motor nativo de propagación de campo
+scenarios/      Fixtures narrativos de escenario
+scripts/        Utilidades de desarrollo local
+src/            Paquete Python y servicios
+tests/          Tests unitarios, de integración, escenario, replay y propiedades
 ```
 
-## Validation
+## Validación
 
-The archive is validated through unit, integration, scenario, replay, and property-style tests:
+El archivo se valida con tests unitarios, de integración, escenario, replay y propiedades:
 
 ```bash
 python3 -m unittest discover -s tests -v
 ```
 
-The suite covers:
+La suite cubre:
 
-- geometry and state transition behavior
-- event bus replay
-- policy outcome across bundled scenarios
-- field monotonicity and shielding behavior
-- HTTP API execution
+- geometría y comportamiento de transición de estado
+- replay del event bus
+- resultado de política a través de los escenarios incluidos
+- monotonicidad del campo y efecto del shielding
+- ejecución de la API HTTP
 
-## Documentation Map
+## Mapa de Documentación
 
-- [`docs/manifesto.md`](/Volumes/macOS%20-%20Beck/SnoGuard/docs/manifesto.md)
-- [`docs/architecture.md`](/Volumes/macOS%20-%20Beck/SnoGuard/docs/architecture.md)
-- [`docs/development.md`](/Volumes/macOS%20-%20Beck/SnoGuard/docs/development.md)
-- [`docs/scenarios.md`](/Volumes/macOS%20-%20Beck/SnoGuard/docs/scenarios.md)
-- [`docs/glossary.md`](/Volumes/macOS%20-%20Beck/SnoGuard/docs/glossary.md)
-- [`docs/api.md`](/Volumes/macOS%20-%20Beck/SnoGuard/docs/api.md)
-- [`docs/events.md`](/Volumes/macOS%20-%20Beck/SnoGuard/docs/events.md)
-- [`docs/policies.md`](/Volumes/macOS%20-%20Beck/SnoGuard/docs/policies.md)
+- [docs/manifesto.md](docs/manifesto.md)
+- [docs/architecture.md](docs/architecture.md)
+- [docs/development.md](docs/development.md)
+- [docs/scenarios.md](docs/scenarios.md)
+- [docs/glossary.md](docs/glossary.md)
+- [docs/api.md](docs/api.md)
+- [docs/events.md](docs/events.md)
+- [docs/policies.md](docs/policies.md)
 
-## Closing Note
+## Nota de Cierre
 
-Lumen Veil is not arranged as a disposable prototype. It is arranged as an archive of doctrine: something to inspect, to rehearse, to extend, and to inhabit. Every module should read as part of the same order, and every run should leave behind a ledger worthy of judgment.
+Lumen Veil no está dispuesto como un prototipo descartable. Está dispuesto como un archivo de doctrina: algo que puede inspeccionarse, ensayarse, extenderse y habitarse. Cada módulo debería leerse como parte del mismo orden, y cada ejecución debería dejar tras de sí un ledger digno de juicio.
